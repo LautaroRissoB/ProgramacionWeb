@@ -5,18 +5,19 @@
         <meta name="viewport"
         content="width=device-width,
         initial-scale=1.0">
-        <title>UCEMA test</title>
+        <title>GLASSES</title>
         <link rel="stylesheet" href="styles.CSS">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     </head>
  
     <body>
-        <div>
+      <!-- Logo, NavBar -->
+        <div class="navbar" id="navbar">
             <nav class="menu">
-                <img src="img/logo_lentes.png" alt="Logo" height="150px">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <nav class="navbar navbar-expand-lg navbar-light bg-beige">
                   <div class="container-fluid">
+                    <img src="img/logo_lentes.png" alt="Logo" height="130px">
                     <a class="navbar-brand" href="http://127.0.0.1:5500/index.html#">Home</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                       <span class="navbar-toggler-icon"></span>
@@ -24,17 +25,21 @@
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                       <ul class="navbar-nav">
                         <li class="nav-item">
-                          <a class="nav-link" href="#">Sobre nosotros</a>
+                          <a class="nav-link" href="./sobre_nosotros.html">Sobre nosotros</a>
+                          <li class="nav-item">
+                            <a class="nav-link" href="./asesoramiento.html">Asesoramiento</a>
                         </li>
+
+                          <!-- Parte del NavBar que se extiende, clickeando el los diferentes modelos te llevan al mismo ubicado en el catálogo. -->
                         <li class="nav-item dropdown">
                           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Diseños
                           </a>
                           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Anteojos de sol</a></li>
-                            <li><a class="dropdown-item" href="#">Antiparras deportivas</a></li>
-                            <li><a class="dropdown-item" href="#">Anteojos de descanso</a></li>
-                            <li><a class="dropdown-item" href="#">Anteojos extravagantes</a></li>
+                            <li><a class="dropdown-item" href="#img_sol">Anteojos de sol</a></li>
+                            <li><a class="dropdown-item" href="#img_deportivas">Antiparras deportivas</a></li>
+                            <li><a class="dropdown-item" href="#img_descanso">Anteojos de descanso</a></li>
+                            <li><a class="dropdown-item" href="#img_extravagantes">Anteojos extravagantes</a></li>
                           </ul>
                         </li>
                       </ul>
@@ -42,54 +47,82 @@
                   </div>
                 </nav>
         </div>
-        <div class="titulo" align="center">
-            <h1>¡Ponele onda a tu outfit!</h1>
-            <video src="video/Video inicial.mp4" width="400" autoplay muted></video>
-        </div>
+      
+        <header>
+
+          <!-- Este div está intencionalmente en blanco. Crea la superposición negra transparente sobre el video que puede modificar en el CSS -->
+          <div class="overlay"></div>
         
+          <!-- HTML del video que va a estar en el backgound -->
+          <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            <source src="video/Video inicial.mp4" type="video/mp4">
+          </video>
+        
+          <!-- Contenido del texto que se encuentra sobre el video -->
+          <div class="container h-100">
+            <div class="d-flex h-100 text-center align-items-center">
+              <div class="w-100 text-white" >
+                <h1 class="display-3">¡Ponele onda a tu outfit!</h1>
+                <p class="lead mb-0">Gran variedad de modelos</p>
+              </div>
+            </div>
+          </div>
+        </header>
+
+
+        <!-- Comienza la seccion del catálogo -->
         <div class="subtitulo">
-          <h2>🔸CATÁLOGO🔸</h2>
+          <h1>🔸CATÁLOGO🔸</h1>
         </div>
 
+        <!-- Este esta dividido en 4 cards, cada una con un diseño y descripcion diferente. Ademas se agregaron 2 botones,
+          uno interactivo el cual te lleva al carrito de compra(todavia no lo sabemos hacer), y el otro es un boton sin interaccion
+          el cual es simplemente un llamado a la accion pra que el cliente compre(boton de ¡HOT SALE!)  -->
         <div class="row row-cols-1 row-cols-md-2 g-4">
-          <div class="col">
+          <div class="col-xl-6">
             <div class="card">
-              <img src="img/imp_diapositova_1.jpg" width="250" height="500" class="card-img-top" alt="Anteojos de sol">
+              <img src="img/img_sol.jpeg" id="img_sol" class="card-img-top img-fluid" alt="Anteojos de sol">
               <div class="card-body">
                 <h5 class="card-title">Anteojos de sol🌞</h5>
                 <p class="card-text">Un diseño veraniego y comodo, pero sin perder la elegancia. <span class="badge bg-danger">¡Hot Sale!</span></p>
+                  <button type="button" class="btn btn-outline-secondary"><a href="/carrito_anteojos_sol.html"> Agregar al carrito </a></button>
               </div>
             </div>
           </div>
-          <div class="col">
+          <div class="col-xl-6">
             <div class="card">
-              <img src="img/img_antiparras.webp" width="250" height="500" class="card-img-top" alt="antiparras deportivas">
+              <img src="img/img_deportivas.jpeg" id="img_deportivas" class="card-img-top img-fluid" alt="antiparras deportivas">
               <div class="card-body">
                 <h5 class="card-title">Antiparras deportivas🏂</h5>
                 <p class="card-text">Comodas, resistentes y cuentan con protector de rayos UV. <span class="badge bg-danger">¡Hot Sale!</span></p>
+                  <button type="button" class="btn btn-outline-secondary"><a href="/carrito_anteojos_deportivos.html"> Agregar al carrito </a></button>
               </div>
             </div>
           </div>
-          <div class="col">
+          <div class="col-xl-6">
             <div class="card">
-              <img src="img/img_anteojos de descanso.jpeg" width="250" height="500" class="card-img-top" alt="anteojos de descanso">
+              <img src="img/img_lectura1.jpeg" id="img_descanso" class="card-img-top img-fluid" alt="anteojos de descanso">
               <div class="card-body">
                 <h5 class="card-title">Anteojos de descanso📕</h5>
                 <p class="card-text">Ideales para trabajar, leer e incluso jugar videojuegos. <span class="badge bg-danger">¡Hot Sale!</p>
+                  <button type="button" class="btn btn-outline-secondary"><a href="/carrito_anteojos_descanso.html"> Agregar al carrito </a></button>
               </div>
             </div>
           </div>
-          <div class="col">
+          <div class="col-xl-6">
             <div class="card">
-              <img src="img/img_anteojos_extravagantes.jpg" width="250" height="500" class="card-img-top" alt="anteojos extravagantes">
+              <img src="img/img_extravagante.jpeg" id="img_extravagantes" class="card-img-top img-fluid" alt="anteojos extravagantes">
               <div class="card-body">
                 <h5 class="card-title">Anteojos extravagantes🤪</h5>
-                <p class="card-text">Diseñado para quienes les guste ir mas alla de lo usual. <span class="badge bg-danger">¡Hot Sale!</p>
-              </div>
+                <p class="card-text">Diseñado para quienes les guste ir mas allá de lo usual. <span class="badge bg-danger">¡Hot Sale!</p>
+                  <button type="button" class="btn btn-outline-secondary"><a href="/carrito_anteojos_extravagantes.html"> Agregar al carrito </a></button>
+                </div>
             </div>
           </div>
         </div>
 
+        <!-- Apartado de comentarios, con el objetivo de recibir feedback de nuestros cliente. Y tambien nos da la posibilidad de
+            obtener sus e-mails, para futuras estrategias de marketing -->
         <div class="comentario">
           <h6 class="newsletter">Ayudanos a mejorar, tus comentarios nos interesan📩</h6>
           <div class="mb-3">
@@ -97,11 +130,11 @@
             <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
           </div>
           <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Tu Nombre:</label>
+              <label for="exampleFormControlInput1" class="form-label">Nombre:</label>
               <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="...">
           </div>
           <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Tu Apellido:</label>
+              <label for="exampleFormControlInput1" class="form-label">Apellido:</label>
               <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="...">
           </div>
           <div class="mb-3">
@@ -110,13 +143,17 @@
           </div>
         </div>
         
+        <!-- En esta seccion se encuentra nuestra politica de privacidad y nuestros teminos y condiciones de uso, es un apartado el cual
+        obligatoriamente debe tener nuestra página -->
         <div class="list-group">
           <a href="https://www.stylestore.com.ar/institucional/politicas-de-privacidad" class="list-group-item list-group-item-action">Politica de privacidad</a>
           <a href="https://www.stylestore.com.ar/institucional/terminos-y-condiciones" class="list-group-item list-group-item-action">Terminos y condiciones</a>
         </div>
 
+        <!-- Seccion pensada para que los usuarios que no hayan querido dejar comentarios sobre nuestra pagina en el apartado anterior,
+          igualmente puedan darnos su opinion y asi obtener mas feedback, siempre con el objetivo de mejorar nuestra página -->
         <div class="puntuar">
-          <h6 class="opinion">¿Como fue tu experiancia en nuesta web?</h6>
+          <h6 class="opinion">¿Como fue tu experiencia en nuesta web?</h6>
           <button class="btn btn-outline-danger rounded-circle text-center mr-2 px-0" 
           style="width: 38px; height: 38px" href="#">1</button>
           <button class="btn btn-outline-warning rounded-circle text-center mr-2 px-0" 
@@ -129,7 +166,8 @@
           style="width: 38px; height: 38px" href="#">5</button>
         </div>
 
-        <div class="social-icons">
+        <!-- Apartado con los links a las diferentes redes sociales -->
+        <div class="social-icons" align="center">
           <a class="social-link" title="Facebook" href="https://www.facebook.com/" target="_blank">
           <svg aria-hidden="true" focusable="false" role="presentation" xmlns="" width="28" height="28" viewBox="0 0 28 28">      <path fill="currentColor" fill-rule="evenodd" d="M16.913 13.919h-2.17v7.907h-3.215V13.92H10v-2.794h1.528V9.316c0-1.294.601-3.316 3.245-3.316l2.38.01V8.72h-1.728c-.282 0-.68.145-.68.762v1.642h2.449l-.281 2.794z"></path>    </svg>
           <span class="visually-hidden">Seguinos en Facebook</span>
@@ -147,6 +185,7 @@
           
           </div>        
 
+          <!-- Seccion que da la posibilidad a nuestros usuarios de aceptar nuestras Cookies -->
         <div class="alert alert-warning alert-dismissible fade show" role="alert">
           <strong>Importante!</strong> Recuerda leer y aceptar nuetras cookies. <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -155,7 +194,46 @@
             </label>
           </div>
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
+        </div> 
+
+        <!-- Pestaña la cual se abre clickeando el icono de Watsapp que se encuentra a la derecha, este le da la posibilidad a 
+          los usuarios de contactarnos y poder sacarse todas sus dudas -->
+        <div class="boton-wpp">
+          <div id="caja" class="wpp-caja">
+              <div class="wpp-header">
+                  <h4>Hola! 🕶</h4>
+                  <p>Acá podrás contactarnos por WhatsApp:</p>
+                  <i id="cerrar" class="cerrar">X</i>
+              </div>
+              <div class="wpp-contactos">
+                  <a target="_blank" href="https://walink.co/3c3359">
+                      <div class="contacto">
+                          <img src="https://aminochem.com/wp-content/uploads/2022/05/icon-fixed-whatsapp.png" alt="">
+                          <div>
+                              <p class="nombre">Atención al cliente Glasses</p>
+                              <p class="numero">Dejanos tus dudas</p>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+          </div>
+          <img id="imagen" class="imagen-wpp" src="https://aminochem.com/wp-content/uploads/2022/05/icon-fixed-whatsapp.png" alt="">
+      </div>
+      <script>
+      const caja = document.getElementById('caja'),
+          abrir = document.getElementById('imagen'),
+          cerrar = document.getElementById('cerrar')
+      if (abrir) {
+          abrir.addEventListener('click', () => {
+              caja.classList.add('mostrar')
+          })
+      }
+      if (cerrar) {
+          cerrar.addEventListener('click', () => {
+              caja.classList.remove('mostrar')
+          })
+      };
+    </script>
 
     </body>
 </html>
